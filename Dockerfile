@@ -16,8 +16,10 @@ RUN pip install pydot graphviz
 
 
 RUN pip install tensorflow[and-cuda]==2.17.0
-RUN pip install keras==3.4.1 
-#3.4.1 is a compatibility requirement for my use case atm
+RUN pip install keras==3.4.1
+
+RUN pip install keras-cv
+ENV KERAS_BACKEND=tensorflow
 
 # Set the working directory in the container
 WORKDIR /app
